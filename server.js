@@ -61,7 +61,7 @@ io.on("connection", (socket) => {
     //incoming formate iceCandidate {from,to,sdp}
     socket.on("iceCandidate", (iceCandidate) => {
        console.log(`***** iceCandidate from client ${JSON.stringify(iceCandidate)}`);
-       console.log(`***** iceCandidate from client`,iceCandidate.to);
+       console.log(`***** iceCandidate to client`,iceCandidate.to);
         //send the iceCandidate to another client
         //socket.emit("iceCandidate", iceCandidate);
         socket.to(iceCandidate.to).emit("iceCandidate", iceCandidate);
